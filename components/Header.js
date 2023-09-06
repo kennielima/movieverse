@@ -15,7 +15,7 @@ export default function Header() {
     }
 
     return (
-        <header className='h-12 px-12 bg-blue-700 flex items-center justify-between text-white'>
+        <header className=' hover:text-slate-300 h-12 px-12 bg-blue-700 flex items-center justify-between text-white'>
             <Link href='/'>
                 <p className="font-serif text-2xl">MovieVerse</p>
             </Link>
