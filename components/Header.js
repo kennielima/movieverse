@@ -24,7 +24,9 @@ export default function Header() {
                 <input
                     className="relative w-full h-8 pl-3 text-black border-gray-800 rounded-md"
                     type='text'
+                    placeholder='search a database of thousands of movies'
                     onChange={(e) => { setSearched(e.target.value); console.log(searched) }}
+                    onKeyUp={search}
                     value={searched}
                 />
 

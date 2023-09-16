@@ -1,7 +1,5 @@
 import Image from "next/image";
-import { Fragment } from "react";
 import Link from "next/link";
-import Header from "@/components/Header";
 
 export default async function page({ params }) {
   const movie = params.searched;
@@ -14,8 +12,6 @@ export default async function page({ params }) {
   // console.log(params.searched);
 
   return (
-    <Fragment>
-        <Header />
         <main>
             <div className="grid gap-4 grid-cols-fluid my-16 mx-20">
                 {response.results.map((movie) => (
@@ -42,7 +38,6 @@ export default async function page({ params }) {
                 ))}
             </div>
         </main>
-    </Fragment>
 )
 }
 
