@@ -11,8 +11,9 @@ export default async function Home() {
 
     return (
         <Fragment>
-            <div className="grid justify-end my-8 mx-20 py-2 px-12 w-fit h-auto border-slate-500 text-slate-600 bg-slate-300 border-2 font-mono rounded-md font-medium tracking-wider">
+            <div className="grid justify-end my-8 mx-20 py-2 px-6 gap-2 text-center w-fit h-auto border-slate-500 text-slate-600 bg-slate-300 border-2 font-mono rounded-md font-medium tracking-wider">
                 <Link href='/trendingshows'><div>TRENDING SHOWS</div></Link>
+                <Link href='/'><div>Sort</div></Link>
             </div>
             <main>
                 <h1 className='mt-8 flex justify-center font-bold text-3xl'>TRENDING MOVIES</h1>

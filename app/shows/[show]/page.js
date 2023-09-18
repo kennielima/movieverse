@@ -29,7 +29,7 @@ export default async function page({ params }) {
                     <span className='font-normal text-black text-lg not-italic'> {data.last_episode_to_air.runtime} minutes</span>
                 </div>
                 <div>Last Airing:
-                    <span className='font-normal text-black text-lg not-italic'> {data.last_air_date} minutes</span>
+                    <span className='font-normal text-black text-lg not-italic'> {data.last_air_date}</span>
                 </div>
                 <div>Ratings:
                     <span className='font-normal text-black text-lg not-italic'> {data.vote_average}/10</span>
