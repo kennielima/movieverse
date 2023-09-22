@@ -9,7 +9,7 @@ export default async function page({ params }) {
         `https://api.themoviedb.org/3/movie/${movie}?api_key=${process.env.API_KEY}`
     )
     const data = await Details.json();
-    // console.log(data)
+    console.log(data);
 
     const credit = await fetch(
         `https://api.themoviedb.org/3/movie/${movie}/credits?api_key=${process.env.API_KEY}`
@@ -17,8 +17,8 @@ export default async function page({ params }) {
     const response = await credit.json();
     const casts = response.cast;
     const crews = response.crew;
-    console.log({ response });
-    console.log(crews);
+    // console.log({ response });
+
 
 
     return (
