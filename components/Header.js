@@ -22,9 +22,9 @@ export default function Header() {
 
             <div className="flex w-2/5 items-center justify-end border-2 rounded-md border-blue-500">
                 <input
-                    className="relative w-full h-8 pl-3 text-black border-gray-800 rounded-md"
+                    className="relative w-full h-8 pl-1 sm:pl-3 text-black border-gray-800 rounded-md"
                     type='text'
-                    placeholder='search a database of thousands of movies'
+                    placeholder='search for a movie'
                     onChange={(e) => { setSearched(e.target.value); console.log(searched) }}
                     onKeyUp={search}
                     value={searched}
