@@ -50,7 +50,13 @@ export default async function page({ params }) {
                 </div>
 
                 <div className='grid h-fit max-w-5xl mt-2'>
-                    <Image className='rounded grid lg:pl-4 justify-center' src={imagePath + data.backdrop_path} alt='' width={1000} height={1000} />
+                    <Image 
+                    className='rounded grid lg:pl-4 justify-center' 
+                    src={imagePath + (data.backdrop_path !== null ? data.backdrop_path : data.poster_path)} 
+                    alt='' 
+                    width={1000} 
+                    height={1000} 
+                    />
 
                     <div className='grid rounded justify-center text-gray-100 font-mono p-12'>
                         <h2 className='font-bold text-2xl text-center'>Synopsis</h2>

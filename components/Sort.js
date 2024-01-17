@@ -16,7 +16,8 @@ export default function Sort() {
                 Sort
             </div>
             {sortToggle &&
-                <div className="text-sm cursor-pointer transition-all ease-in-out">
+                <div className="text-sm cursor-pointer">
+                    {/* <div className=" animate-waving-hand">new</div> */}
                     <Link href='/byrelease'>
                         <p>by release date</p>
                     </Link>

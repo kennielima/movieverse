@@ -36,7 +36,7 @@ export default async function page({ params }) {
                 </div>
             </div>
             <div className='grid h-fit w-fit rounded mt-2'>
-                <Image className='rounded' src={imagePath + data.backdrop_path} alt='' width={1000} height={1000} />
+                <Image className='rounded' src={imagePath + (data.backdrop_path !== null ? data.backdrop_path : data.poster_path)} alt='' width={1000} height={1000} />
             </div>
                 <div className='grid justify-center bg-slate-800 text-gray-100 font-mono py-8'>
                     <h2 className='font-bold text-xl text-center'>Synopsis</h2>

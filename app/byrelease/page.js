@@ -7,7 +7,7 @@ export default async function sortings() {
     const imagePath = 'https://image.tmdb.org/t/p/original'
 
     const data = await fetch(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}&sort_by=primary_release_date.desc`
+        `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.API_KEY}`
     );
     const response = await data.json();
     // console.log(response)
@@ -18,7 +18,7 @@ export default async function sortings() {
                 <Link href='/trendingshows'><div>TRENDING SHOWS</div></Link>
                 <Sort />
             </div>
-            <h1 className='mt-24 flex justify-center font-bold text-3xl'>TRENDING MOVIES</h1>
+            <h1 className='mt-24 flex justify-center font-bold text-3xl'>NEW MOVIES</h1>
             <div className="grid gap-4 grid-cols-fluid my-8 mx-20">
                 {response.results.map((movie) => (
                     <Link href={`/${movie.id}`}>
