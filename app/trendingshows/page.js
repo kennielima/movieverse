@@ -34,6 +34,7 @@ export default async function trendingshow() {
                                     <div>First Airing:
                                         <span className=''> {show.first_air_date}</span>
                                     </div>
+                                    <button className="m-auto w-16 py-1 bg-blue-500 hover:bg-blue-700 transition-all text-white text-sm rounded-xl">View</button>
                                 </div>
                             </div>
                         </Link>

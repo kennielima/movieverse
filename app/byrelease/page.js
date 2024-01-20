@@ -14,7 +14,7 @@ export default async function sortings() {
 
     return (
         <Fragment className='relative'>
-            <div className="grid justify-end my-8 mx-20 py-2 px-6 gap-1 text-center w-fit h-auto border-slate-500 text-slate-600 bg-slate-300 border-2 font-mono rounded-md font-medium tracking-wider absolute right-4 top-6">
+            <div className="grid justify-end my-8 mx-20 py-2 px-4 gap-1 text-center w-fit h-auto border-blue-600 text-slate-600 bg-blue-100 border-2 font-mono rounded-md font-medium tracking-wider absolute right-4 top-6">
                 <Link href='/trendingshows'><div>TRENDING SHOWS</div></Link>
                 <Sort />
             </div>
@@ -38,6 +38,7 @@ export default async function sortings() {
                                 <div>Released:
                                     <span className=''> {movie.release_date}</span>
                                 </div>
+                                <button className="m-auto w-16 py-1 bg-blue-500 hover:bg-blue-700 transition-all text-white text-sm rounded-xl">View</button>
                             </div>
                         </div>
                     </Link>

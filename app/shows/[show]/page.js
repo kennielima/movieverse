@@ -7,6 +7,12 @@ export default async function page({ params }) {
         `https://api.themoviedb.org/3/tv/${show}?api_key=${process.env.API_KEY}`
     )
     const data = await Details.json();
+    const credit = await fetch(
+        `https://api.themoviedb.org/3/tv/${show}/credits?api_key=${process.env.API_KEY}`
+    )
+    const response = await credit.json();
+    const casts = response.cast;
+
 // console.log(data)
     return (
         <main className='grid justify-center my-8 mx-12 sm:mx-24'>
@@ -41,6 +47,19 @@ export default async function page({ params }) {
                 <div className='grid justify-center bg-slate-800 text-gray-100 font-mono py-8'>
                     <h2 className='font-bold text-xl text-center'>Synopsis</h2>
                 <div className='max-w-2xl font-mono my-4 mx-4'>{data.overview}</div>
+                <div className='grid w-full grid-cols-fluid'>
+                                {casts.map((cast, index) => (
+                                    <div>
+                                        {index < 9 && (
+                                            <div className='grid text-center justify-center'>
+                                                <Image className='text-lg' src={imagePath + cast.profile_path} alt='' width={200} height={200} />
+                                                <p className='text-lg'>{cast.name}</p>
+                                                <p className='text-sm italic'> as '{cast.character}'</p>
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
                 </div>
         </main>
     )

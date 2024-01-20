@@ -1,11 +1,11 @@
 import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Sort from "./Sort";
+import Sort from "../../components/Sort";
 
-export default async function Home() {
+export default async function page() {
     const api = await fetch(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`
+        `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}&page=2`
     );
     const data = await api.json();
     const imagePath = 'https://image.tmdb.org/t/p/original';
@@ -19,7 +19,7 @@ export default async function Home() {
             <main>
                 <h1 className='mt-24 flex justify-center font-bold text-3xl'>TRENDING MOVIES</h1>
 
-                <div className="grid gap-4 grid-cols-fluid mt-8 mx-20">
+                <div className="grid gap-4 grid-cols-fluid my-8 mx-20">
                     {data.results.map((movie) => (
                         <Link href={`/${movie.id}`} key={movie.id}>
                             <div className="max-w-md grid justify-center">
@@ -41,13 +41,12 @@ export default async function Home() {
                         </Link>
                     ))}
                 </div>
-                <Link href='/2'>
-                    <button className="mb-10 flex justify-center mx-auto w-24 py-2 px-3 bg-blue-600 hover:bg-blue-700 transition-all text-white text-sm rounded-xl">
-                        NEXT
+                <Link href='/'>
+                    <button className="mb-8 flex justify-center mx-auto w-24 py-2 px-3 bg-blue-600 hover:text-blue-600 hover:bg-blue-100 hover:border-blue-500 hover:border-2 transition-all text-white text-sm rounded-xl">
+                        PREVIOUS
                     </button>
                 </Link>
             </main>
-
         </Fragment>
     )
 }
